@@ -1,9 +1,9 @@
 Package.describe({
-  name: 'practicalmeteor:mocha-core',
-  summary: 'Fibers aware mocha server side wrappers. Internal package - use practicalmeteor:mocha.',
+  name: 'meteortesting:mocha-core',
+  summary: 'Fibers aware mocha server side wrappers. Internal package used by meteortesting:mocha.',
   version: '1.0.1',
   testOnly: true,
-  git: 'https://github.com/practicalmeteor/meteor-mocha-core.git'
+  git: 'https://github.com/meteortesting/meteor-mocha-core.git'
 });
 
 Npm.depends({
