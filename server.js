@@ -106,10 +106,14 @@ function setupGlobals(mocha) {
 
 // Initialize a new `Mocha` test runner instance that test driver packages
 // can use to ensure they work well with other test driver packages.
-const mochaInstance = new Mocha({
+let options = {
   ui: 'bdd',
   ignoreLeaks: true
-});
+}
+if (process.env.MOCHA_GLOBAL_TIMEOUT) {
+  options.timeout = parseInt(process.env.MOCHA_GLOBAL_TIMEOUT)
+}
+const mochaInstance = new Mocha(options);
 setupGlobals(mochaInstance);
  
 export { mochaInstance, setupGlobals, Mocha };
