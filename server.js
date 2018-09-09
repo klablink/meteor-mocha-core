@@ -82,7 +82,7 @@ function setupGlobals(mocha) {
   };
   mochaExports.it.skip = mochaExports["__org_it"].skip;
   mochaExports.it.only = (name, func) => {
-    mochaExports["__org_it"].only(name, wrapRunnable(func));
+    mochaExports["__org_it"].only(name, func);
   };
 
 
