@@ -1,13 +1,13 @@
 Package.describe({
   name: 'meteortesting:mocha-core',
   summary: 'Fibers aware mocha server side wrappers. Internal package used by meteortesting:mocha.',
-  version: '6.2.2',
+  version: '7.0.0',
   testOnly: true,
   git: 'https://github.com/meteortesting/meteor-mocha-core.git'
 });
 
 Npm.depends({
-  mocha: '6.2.2'
+  mocha: '7.0.0'
 });
 
 Package.onUse(function (api, where) {
