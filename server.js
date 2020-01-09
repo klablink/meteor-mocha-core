@@ -112,7 +112,7 @@ const options = {
 };
 
 if (process.env.MOCHA_TIMEOUT) {
-  options.timeout = parseInt(process.env.MOCHA_TIMEOUT);
+  options.timeout = process.env.MOCHA_TIMEOUT;
   Meteor.settings.public["MOCHA_TIMEOUT"] = process.env.MOCHA_TIMEOUT;
 }
 
