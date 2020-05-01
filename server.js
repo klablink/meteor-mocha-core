@@ -2,6 +2,7 @@ import Fiber from 'fibers';
 import "./setup"
 import Mocha from 'mocha';
 import "./cleanup"
+import config from './loadConfig';
 
 function setupGlobals(mocha) {
   var mochaExports = {};
@@ -116,7 +117,7 @@ if (process.env.MOCHA_TIMEOUT) {
   Meteor.settings.public["MOCHA_TIMEOUT"] = process.env.MOCHA_TIMEOUT;
 }
 
-const mochaInstance = new Mocha(options);
+const mochaInstance = new Mocha({ ...options, ...config });
 setupGlobals(mochaInstance);
 
 export { mochaInstance, setupGlobals, Mocha };
