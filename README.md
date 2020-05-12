@@ -9,9 +9,10 @@ In case you want to in- or decrease the default timeout of 2000 ms, you can set 
 ## Mocha configuration with .mocharc file
 <!-- Please keep this section in sync with meteortesting:mocha package -->
 
-You can configure the mocha runner with a `.mocharc.js` or a `.mocharc.json` file at the root of your meteor app. You can find examples of config files [here](https://github.com/mochajs/mocha/tree/master/example/config).
+You can configure the mocha runner with a `.mocharc.js` or a `.mocharc.json` file at the root of your Meteor app. This package uses mocha programmatically, so it supports a constrained list of options.
 
-Please keep in mind that all options might not be compatible with how the Meteor test runner operates.
+* Read more about using mocha and supported options [here](https://github.com/mochajs/mocha/wiki/Using-Mocha-programmatically).
+* You can find examples of config files [here](https://github.com/mochajs/mocha/tree/master/example/config).
 
 ### Example
 
@@ -23,5 +24,6 @@ module.exports = {
   retries: 2,
   slow: 200,
   timeout: 10000,
+  grep: 'hello' // Only runs tests whose name contains this
 };
 ```
