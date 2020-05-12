@@ -6,17 +6,18 @@ const options = {
   ui: 'bdd',
 };
 
+
+// Attempt to load config from .mocharc file
+try {
+  const config = JSON.parse(__meteor_runtime_config__['meteortesting:mocha-core_config'])
+  options = { ...options, ...config };
+} catch (e) {}
+
+
 if (Meteor.settings.public["MOCHA_TIMEOUT"]) {
   options.timeout = Meteor.settings.public["MOCHA_TIMEOUT"];
 }
 
-let config = {}
-
-// Attempt to load config from .mocharc file
-try {
-  config = JSON.parse(__meteor_runtime_config__['meteortesting:mocha-core_config'])
-} catch (e) {}
-
-mocha.setup({...options, ...config});
+mocha.setup(options);
 
 export { mocha };
