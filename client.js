@@ -9,9 +9,11 @@ const options = {
 
 // Attempt to load config from .mocharc file
 try {
-  const config = JSON.parse(__meteor_runtime_config__['meteortesting:mocha-core_config'])
+  const config = JSON.parse(__meteor_runtime_config__['meteortesting:mocha-core_config']);
   options = { ...options, ...config };
-} catch (e) {}
+} catch (e) {
+  console.error(e);
+}
 
 
 if (Meteor.settings.public["MOCHA_TIMEOUT"]) {

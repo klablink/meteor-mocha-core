@@ -11,6 +11,8 @@ In case you want to in- or decrease the default timeout of 2000 ms, you can set 
 
 You can configure the mocha runner with a `.mocharc.js` or a `.mocharc.json` file at the root of your Meteor app. This package uses mocha programmatically, so it supports a constrained list of options.
 
+If both files are defined, `.mocharc.js` will overwrite the settings in `.mocharc.json`.
+
 * Read more about using mocha and supported options [here](https://github.com/mochajs/mocha/wiki/Using-Mocha-programmatically).
 * You can find examples of config files [here](https://github.com/mochajs/mocha/tree/master/example/config).
 
