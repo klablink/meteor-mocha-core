@@ -2,7 +2,7 @@
 import 'mocha/mocha.js';
 
 // This defines "describe", "it", etc.
-const options = {
+let options = {
   ui: 'bdd',
 };
 
