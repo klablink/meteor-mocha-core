@@ -114,11 +114,6 @@ const options = {
   ...config,
 };
 
-if (process.env.MOCHA_TIMEOUT) {
-  options.timeout = process.env.MOCHA_TIMEOUT;
-  Meteor.settings.public["MOCHA_TIMEOUT"] = process.env.MOCHA_TIMEOUT;
-}
-
 const mochaInstance = new Mocha(options);
 setupGlobals(mochaInstance);
 

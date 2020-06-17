@@ -15,11 +15,6 @@ try {
   console.error(e);
 }
 
-
-if (Meteor.settings.public["MOCHA_TIMEOUT"]) {
-  options.timeout = Meteor.settings.public["MOCHA_TIMEOUT"];
-}
-
 mocha.setup(options);
 
 export { mocha };

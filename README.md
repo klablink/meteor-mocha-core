@@ -13,6 +13,8 @@ You can configure the mocha runner with a `.mocharc.js` or a `.mocharc.json` fil
 
 If both files are defined, `.mocharc.js` will overwrite the settings in `.mocharc.json`.
 
+The setting `timeout` will be overwritten if the environment variable `MOCHA_TIMEOUT` is set.
+
 * Read more about using mocha and supported options [here](https://github.com/mochajs/mocha/wiki/Using-Mocha-programmatically).
 * You can find examples of config files [here](https://github.com/mochajs/mocha/tree/master/example/config).
 

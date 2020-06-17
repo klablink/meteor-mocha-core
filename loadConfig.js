@@ -24,6 +24,10 @@ if (fs.existsSync(`${pwd}/.mocharc.js`)) {
   }
 }
 
+if (process.env.MOCHA_TIMEOUT) {
+  config.timeout = process.env.MOCHA_TIMEOUT;
+}
+
 __meteor_runtime_config__['meteortesting:mocha-core_config'] = JSON.stringify(
   config,
 );
