@@ -1,7 +1,9 @@
-import Fiber from 'fibers';
 import "./setup"
-import Mocha from 'mocha';
 import "./cleanup"
+
+import Fiber from 'fibers';
+import Mocha from 'mocha';
+import config from './loadConfig';
 
 function setupGlobals(mocha) {
   var mochaExports = {};
@@ -108,13 +110,9 @@ function setupGlobals(mocha) {
 // can use to ensure they work well with other test driver packages.
 const options = {
   ui: 'bdd',
-  ignoreLeaks: true
+  ignoreLeaks: true,
+  ...config,
 };
-
-if (process.env.MOCHA_TIMEOUT) {
-  options.timeout = process.env.MOCHA_TIMEOUT;
-  Meteor.settings.public["MOCHA_TIMEOUT"] = process.env.MOCHA_TIMEOUT;
-}
 
 const mochaInstance = new Mocha(options);
 setupGlobals(mochaInstance);
