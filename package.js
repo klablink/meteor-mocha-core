@@ -1,22 +1,22 @@
+/* global Package Npm */
+
 Package.describe({
   name: 'meteortesting:mocha-core',
   summary: 'Fibers aware mocha server side wrappers. Internal package used by meteortesting:mocha.',
-  version: '8.1.2',
+  version: '8.1.3',
   testOnly: true,
   git: 'https://github.com/meteortesting/meteor-mocha-core.git'
-});
+})
 
 Npm.depends({
-  mocha: '8.1.2'
-});
+  mocha: '10.2.0'
+})
 
-Package.onUse(function (api, where) {
-  api.versionsFrom('1.6');
+Package.onUse(function (api) {
+  api.use('ecmascript')
 
-  api.use('ecmascript');
+  api.mainModule('client.js', 'client')
+  api.mainModule('server.js', 'server')
 
-  api.mainModule('client.js', 'client');
-  api.mainModule('server.js', 'server');
-
-  api.export(['mochaInstance', 'setupGlobals'], 'server');
-});
+  api.export(['mochaInstance', 'setupGlobals'], 'server')
+})
