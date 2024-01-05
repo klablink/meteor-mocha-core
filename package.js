@@ -2,8 +2,8 @@
 
 Package.describe({
   name: 'meteortesting:mocha-core',
-  summary: 'Fibers aware mocha server side wrappers. Internal package used by meteortesting:mocha.',
-  version: '8.2.0-beta300.0',
+  summary: 'Mocha server side wrappers. Internal package used by meteortesting:mocha.',
+  version: '8.3.0-beta300.0',
   testOnly: true,
   git: 'https://github.com/meteortesting/meteor-mocha-core.git'
 })
@@ -13,7 +13,7 @@ Npm.depends({
 })
 
 Package.onUse(function (api) {
-  api.use('ecmascript')
+  api.use('ecmascript@0.16.8-alpha300.11')
 
   api.mainModule('client.js', 'client')
   api.mainModule('server.js', 'server')
