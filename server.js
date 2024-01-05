@@ -60,13 +60,7 @@ function setupGlobals (mocha) {
         }
       }
 
-      if (Meteor.isFibersDisabled) {
-        return run()
-      } else {
-        const Fiber = require('fibers')
-        if (Fiber.current) return run()
-        Fiber(run).run()
-      }
+      return run()
     }
 
     // Show original function source code

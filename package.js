@@ -3,7 +3,7 @@
 Package.describe({
   name: 'meteortesting:mocha-core',
   summary: 'Mocha server side wrappers. Internal package used by meteortesting:mocha.',
-  version: '8.3.0-beta300.0',
+  version: '8.3.1-beta300.0',
   testOnly: true,
   git: 'https://github.com/meteortesting/meteor-mocha-core.git'
 })
