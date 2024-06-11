@@ -3,7 +3,7 @@
 Package.describe({
   name: 'meteortesting:mocha-core',
   summary: 'Mocha server side wrappers. Internal package used by meteortesting:mocha.',
-  version: '8.3.1-beta300.0',
+  version: '8.3.1-rc300.0',
   testOnly: true,
   git: 'https://github.com/meteortesting/meteor-mocha-core.git'
 })
@@ -13,7 +13,8 @@ Npm.depends({
 })
 
 Package.onUse(function (api) {
-  api.use('ecmascript@0.16.8-alpha300.11')
+  api.versionsFrom(['2.8.0', '3.0-rc.2'])
+  api.use('ecmascript')
 
   api.mainModule('client.js', 'client')
   api.mainModule('server.js', 'server')
