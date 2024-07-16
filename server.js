@@ -63,6 +63,7 @@ function setupGlobals (mocha) {
       if (Meteor.isFibersDisabled) {
         return run()
       } else {
+        // pre-3.0 compatibility
         const Fiber = require('fibers')
         if (Fiber.current) return run()
         Fiber(run).run()
