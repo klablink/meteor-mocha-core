@@ -10,7 +10,7 @@ Package.describe({
 
 Npm.depends({
   mocha: '10.2.0',
-  'mocha-junit-reporter': '2.2.1'
+  'mocha-junit-reporter': 'git+https://github.com/klablink/mocha-junit-reporter.git#v2.2.2'
 })
 
 Package.onUse(function (api) {
